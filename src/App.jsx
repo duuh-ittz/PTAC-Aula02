@@ -1,7 +1,9 @@
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 export default function App() {
 
- import Footer from "./Components/Footer";
- import Header from "./Components/Header";
   return(
     <main>
       <Header/>
