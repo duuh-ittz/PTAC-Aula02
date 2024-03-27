@@ -4,18 +4,35 @@ export default function Main() {
     const [nome, setNome] = useState(""); //primeira:acessa setNome:modifica
     const [telefone,setTelefone] = useState();
 
-    return (
-    <main>
-            <input 
-            type="text"
+    const [listaContatos, setListaContatos] = useState([]);
+    const registrar = (event) => {
+
+        event.preventDefault();
+        alert("React.js");
+
+        setListaContatos([...listaContatos],
+         {
+           nomeSalvo: nome,
+           telefoneSalvo: telefone
+
+         }   
+        ]);
+    };
+     console.table(ListaContatos);
+
+        return (
+        <main>
+        <form action="">
+            <label htmlFor="nome">Nome</label>
+             <input 
+                type="text"
             name="nome-conato"
             id="nome"
             value= {nome}
             onChange={
             (event) => setNome(event.target.value)}/> 
+                  {nome}  
 
-            {nome}  
-            
             <input type ="tel"
             name="nome-contato"
             id="telefone" 
@@ -23,6 +40,7 @@ export default function Main() {
             onChange={
                 (event) => setTelefone(event.target.value)}/> 
             <button>cadastrar</button>
+            </form>
         </main>
     );
 }
